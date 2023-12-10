@@ -1,0 +1,29 @@
+en:
+  likedGames: 'ClareGuide'
+  activerecord:
+    models:
+      game: 'LOL'
+    attributes:
+      game:
+        title: 'Name'
+        description: 'Description'
+        image: 'Image'
+        year: 'Year'
+  links:
+    like: 'Add to like'
+    dislike: 'Remove from liked'
+    back: 'Back'
+    edit: 'Edit'
+    delete: 'Delete'
+  createdByUser: 'Created by'
+  headers:
+    newGame: 'New Guide'
+    gameWorld: 'Guides for League of Legends'
+  add_more: 'Add more'
+  helpers:
+    submit:
+      create: "Create %{model}"
+      update: "Update %{model}"
+    RUSure: "Are you sure?"
+    head: "Заголовок"
+    body: "Body"

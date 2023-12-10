@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= t('headers.gameWorld') %></title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-brand">
+        <%= link_to t('headers.gameWorld'), root_path %>
+      </div>
+      <% if user_signed_in? %>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to t('headers.newGame'), new_game_path %></li>
+          <li><%= link_to t('devise.signOut'), destroy_user_session_path, method: :delete %></li>
+        </ul>
+      <% else %>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to t('devise.signUp'), new_user_registration_path %></li>
+          <li><%= link_to t('devise.signIn'), new_user_session_path %></li>
+        </ul>
+      <% end %>
+    </div>
+  </nav>
+
+  <div class="container">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: "alert" %>
+    <% end %>
+    <%= yield %>
+  </div>
+</body>
+</html>

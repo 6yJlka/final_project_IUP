@@ -1,0 +1,27 @@
+<div class="main_content">
+  <div id="game_top" class="row">
+    <div class="col-md-4">
+      <%= image_tag @game.image.url(:medium), class: "game_image" %>
+    </div>
+    <div class="col-md-8">
+      <div id="game_info">
+        <h1><%= @game.title %></h1>
+        <p class="description"><%= @game.description %></p>
+        <p class="year"><%= @game.year %></p>
+        <p>
+          <%= t('createdByUser') %> <%= @game.user.email %><br>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <%= link_to t('links.back'), root_path, class: "btn btn-default" %>
+      <% if user_signed_in? %>
+        <%= link_to t('links.edit'), edit_game_path(@game), class: "btn btn-default" %>
+        <%= link_to t('links.delete'), game_path(@game), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %>
+      <% end %>
+    </div>
+  </div>
+</div>

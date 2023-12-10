@@ -1,0 +1,36 @@
+ru:
+  likedGames: 'КлэрГайд'
+  activerecord:
+    models:
+      game: 'Лига Легенд'
+    attributes:
+      game:
+        title: 'Название'
+        description: 'Описание'
+        image: 'Изображение'
+        year: 'Год выпуска'
+      comment:
+        activerecord:
+          models:
+            comment: 'Комментарий'
+          attributes:
+            comment:
+              name: 'Название'
+              body: 'Комментарий'
+  links:
+    like: 'Добавить в любимые'
+    dislike: 'Убрать из любимых'
+    back: 'Назад'
+    edit: 'Изменить'
+    delete: 'Удалить'
+  createdByUser: 'Создано пользователем'
+  headers:
+    newGame: 'Новый гайд'
+    gameWorld: 'Гайды по Лиге Легенд'
+  add_more: 'Добавить еще'
+  helpers:
+    submit:
+      create: "Создать %{model}"
+      update: "Обновить %{model}"
+    head: "Заголовок"
+    addComment: "Добавить Комментарий"
